@@ -1,8 +1,8 @@
 # 1 - imports = Bibliotecas
 import pytest
 
-
 # 2 - class = Classes
+
 
 
 
@@ -10,6 +10,7 @@ import pytest
 # 3 - definitions = métodos e funções
 def print_hi(name):
         print (f'Oi, {name}')
+
 
 def somar(num1,num2):
     return num1 + num2
@@ -27,7 +28,7 @@ def dividir(num1,num2):
         return 'NÃO DIVIDIRAS POR ZERO'
 if __name__ == '__main__':
     print_hi('Helio')
-resultado = somar(1,2)
+resultado = somar(2,3)
 print(f' O resultado da soma é {resultado}')
 resultado = substrair(5,3)
 print(f' O resultado da subtração é {resultado}')
@@ -41,17 +42,23 @@ print(f' O resultado da divisão é {resultado}')
 
 # Teste da função somar
 
-def test_somar():
+@pytest.mark.parametrize('num1,num2,resultado',[
+    #valores
+    (5,4,9), #teste 1
+    (3,5,8), #teste 2
+    (10,6,16), #teste 3
+])
+def test_somar(num1,num2,resultado):
     #1- preparo
-    num1 = 8 #input
-    num2 = 5 #input
-    resultado_esperado = 15 #output
+    #num1 = 8 #input
+    #num2 = 5 #input
+    #resultado_esperado = 15 #output
 
     #2- exectuta
-    resultado_atual = somar(num1,num2)
+    #resultado_atual = somar(num1,num2)
 
     #3- valida
-    assert resultado_atual == resultado_esperado
+    assert num1+num2 == resultado
 
 def test_somar_compacto():
     assert somar(8,5) == 13
@@ -66,7 +73,7 @@ def test_dividir():
     assert dividir(20,5) == 25
 def test_dividir_0():
     assert dividir(6,0) == 'NÃO DIVIDIRAS POR ZERO'
-    
+
 #TDD : Desenvolvimento Direcionado pelo Testes
 # - Criar o esqueleto de classes, funções e métodos logo no início da Sprint
 # - Criar pelo 1 teste (feliz) para todas as funções e métodos
