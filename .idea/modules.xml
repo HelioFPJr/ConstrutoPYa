@@ -3,7 +3,6 @@
   <component name="ProjectModuleManager">
     <modules>
       <module fileurl="file://$PROJECT_DIR$/.idea/ConstrutoPYa.iml" filepath="$PROJECT_DIR$/.idea/ConstrutoPYa.iml" />
-      <module fileurl="file://$PROJECT_DIR$/../introPY/.idea/introPY.iml" filepath="$PROJECT_DIR$/../introPY/.idea/introPY.iml" />
     </modules>
   </component>
 </project>
